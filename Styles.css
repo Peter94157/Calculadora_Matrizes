@@ -1,0 +1,108 @@
+html {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #c4c4c4;
+    
+}
+
+body {
+    background-color: #fff;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    width: 70%;
+    font-size: larger;
+    margin-bottom: 40px;
+}
+
+main {
+    background-color: #ddd7d7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+fieldset {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+fieldset:nth-child(2) {
+    flex-direction: column;
+}
+
+fieldset>legend {
+    font-weight: bold;
+    font-size: 20px;
+    width: 29%;
+}
+fieldset:nth-child(3)>legend{
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+fieldset>input {
+    width: 20px;
+    height: 15px;
+}
+.matriz{
+    width: 140px;
+    display: block;
+    margin: auto;
+}
+
+.matriz>input {
+    font-size: large;
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    
+}
+#operador{
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+fieldset:nth-child(3){
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    font-size: x-large;
+    width: 150px;
+    height: 40px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: end;
+}
+
+.campoForms {
+    width: 25px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}

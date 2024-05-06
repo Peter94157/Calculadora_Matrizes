@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calculadora de matrizes</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Styles.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>CALCULO DE MATRIZES</h1>
+        </header>
+        <section>
+            <fieldset id="operacao">
+                <legend>Selecione a Operação</legend>
+
+                <input type="radio" name="operacao" id="adicao">
+                <label for="adicao">Adição</label>
+                <input type="radio" name="operacao" id="subtracao">
+                <label for="subtracao">Subtração</label><br>
+                <input type="radio" name="operacao" id="mult">
+                <label for="mult">Multiplicação</label>
+                <input type="radio" name="operacao" id="divisao">
+                <label for="divisao">Divisão</label>
+
+            </fieldset>
+            <fieldset>
+
+                <legend>Quantidades desejadas</legend>
+
+                <label for="qtdMatriz">Quantidade de matrizes: </label>
+                <input type="number" class="campoForms" id="qtdMatriz" min="1">
+
+
+                <label for="qtdLin">Quantidade de linhas: </label>
+                <input type="number" class="campoForms" id="qtdLin" min="1">
+                <label for="qtdCol">Quantidade de colunas: </label>
+                <input type="number" class="campoForms" id="qtdCol" min="1">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Matrizes</legend>
+
+                <p style="font-size: 80px; width: 20px;">[</p>
+                <div class="matriz">
+                    <input type="number">
+                    <input type="number">
+                    <input type="number"><br>
+                    <input type="number">
+                    <input type="number">
+                    <input type="number">
+                </div>
+                <h1 id="operador">+</h1>
+                <div class="matriz">
+                    <input type="number">
+                    <input type="number">
+                    <input type="number"><br>
+                    <input type="number">
+                    <input type="number">
+                    <input type="number">
+                </div>
+                <p style="font-size: 80px; width: 20px;">]</p>
+            </fieldset>
+            <button onclick="nextPage()">Próximo</button>
+
+        </section>
+
+    </main>
+</body>
+
+</html>
