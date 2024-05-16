@@ -6,6 +6,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Calculadora de matrizes</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" type="imagex/png" href="./logo.bmp">
     <link rel='stylesheet' type='text/css' media='screen' href='Styles.css'>
     <script src='main.js'></script>
 </head>
@@ -19,22 +20,22 @@
             <fieldset id="operacao">
                 <legend>Selecione a Operação</legend>
 
-                <input type="radio" name="operacao" id="adicao">
+                <input type="radio" name="operacao" id="soma" value="soma">
                 <label for="adicao">Adição</label>
-                <input type="radio" name="operacao" id="subtracao">
+                <input type="radio" name="operacao" id="subtracao" value="subtracao">
                 <label for="subtracao">Subtração</label><br>
-                <input type="radio" name="operacao" id="mult">
+                <input type="radio" name="operacao" id="multiplicacao" value="multiplicacao">
                 <label for="mult">Multiplicação</label>
-                <input type="radio" name="operacao" id="divisao">
+                <input type="radio" name="operacao" id="divisao" value="divisao">
                 <label for="divisao">Divisão</label>
 
             </fieldset>
             <fieldset>
 
                 <legend>Quantidades desejadas</legend>
-
+<!-- 
                 <label for="qtdMatriz">Quantidade de matrizes: </label>
-                <input type="number" class="campoForms" id="qtdMatriz" min="1">
+                <input type="number" class="campoForms" id="qtdMatriz" min="1"> -->
 
 
                 <label for="qtdLin">Quantidade de linhas: </label>
@@ -48,28 +49,16 @@
                 <legend>Matrizes</legend>
 
                 <p style="font-size: 80px; width: 20px;">[</p>
-                <div class="matriz">
-                    <input type="number">
-                    <input type="number">
-                    <input type="number"><br>
-                    <input type="number">
-                    <input type="number">
-                    <input type="number">
-                </div>
-                <h1 id="operador">+</h1>
-                <div class="matriz">
-                    <input type="number">
-                    <input type="number">
-                    <input type="number"><br>
-                    <input type="number">
-                    <input type="number">
-                    <input type="number">
-                </div>
+                <div id="matrizA"></div>
+                <h1 id="operador"></h1>
+                <div id="matrizB"></div>
                 <p style="font-size: 80px; width: 20px;">]</p>
             </fieldset>
-            <button onclick="nextPage()">Próximo</button>
+            <button onclick="calcularMatrizes()">Calcular</button>
+            <button onclick="criarMatriz('matrizA');criarMatriz('matrizB')">Próximo</button>
 
         </section>
+        <div id="resultado"></div>
 
     </main>
 </body>
