@@ -16,49 +16,50 @@
         <header>
             <h1>CALCULO DE MATRIZES</h1>
         </header>
-        <section>
+        <section id="configCalculo">
+            <div>
             <fieldset id="operacao">
                 <legend>Selecione a Operação</legend>
 
-                <input type="radio" name="operacao" id="soma" value="soma">
+                <input type="radio" name="operacao" id="soma" value="soma" checked>
                 <label for="adicao">Adição</label>
                 <input type="radio" name="operacao" id="subtracao" value="subtracao">
                 <label for="subtracao">Subtração</label><br>
                 <input type="radio" name="operacao" id="multiplicacao" value="multiplicacao">
                 <label for="mult">Multiplicação</label>
-                <input type="radio" name="operacao" id="divisao" value="divisao">
-                <label for="divisao">Divisão</label>
+                <input type="radio" name="operacao" id="determinante" value="determinante">
+                <label for="determinante">Determinante</label>
+                <input type="radio" name="operacao" id="inversa" value="inversa">
+                <label for="inversa">Inversa</label>
+
 
             </fieldset>
             <fieldset>
 
                 <legend>Quantidades desejadas</legend>
-<!-- 
+                <!-- 
                 <label for="qtdMatriz">Quantidade de matrizes: </label>
                 <input type="number" class="campoForms" id="qtdMatriz" min="1"> -->
 
 
-                <label for="qtdLin">Quantidade de linhas: </label>
-                <input type="number" class="campoForms" id="qtdLin" min="1">
-                <label for="qtdCol">Quantidade de colunas: </label>
-                <input type="number" class="campoForms" id="qtdCol" min="1">
+                <label for="qtdLin">Quantidade de linhas e colunas: </label>
+                <div>
+                    <input type="number" class="campoForms" id="qtdLin" min="1">
+                    <span>X</span>
+                    <!-- <label for="qtdCol">Quantidade de colunas: </label> -->
+                    <input type="number" class="campoForms" id="qtdCol" min="1">
+                </div>
 
             </fieldset>
-
-            <fieldset>
-                <legend>Matrizes</legend>
-
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizA"></div>
-                <h1 id="operador"></h1>
-                <div id="matrizB"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-            </fieldset>
-            <button onclick="calcularMatrizes()">Calcular</button>
-            <button onclick="criarMatriz('matrizA');criarMatriz('matrizB')">Próximo</button>
-
+        </div>
+            <div id="Matrizes"></div>
+            
         </section>
         <div id="resultado"></div>
+        <div>
+            <button onclick="criarField();criarMatriz('matrizA');criarMatriz('matrizB')">Próximo</button>
+        </div>
+        <div id="button"></div>
 
     </main>
 </body>

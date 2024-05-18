@@ -6,12 +6,12 @@ html {
     display: flex;
     justify-content: center;
     background-color: #c4c4c4;
-    
+
 }
 
 body {
     background-color: #fff;
-    width: 700px;
+    width: 800px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -24,6 +24,7 @@ header {
 }
 
 main {
+    margin: 0;
     background-color: #ddd7d7;
     display: flex;
     flex-direction: column;
@@ -33,55 +34,8 @@ main {
     border: 1px solid black;
 }
 
-fieldset {
-    width: 100%;
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-    font-size: 1.2rem;
-}
-
-fieldset:nth-child(2) {
-    flex-direction: column;
-}
-
-fieldset>legend {
-    font-weight: bold;
-    font-size: 20px;
-    width: 29%;
-}
-fieldset:nth-child(3)>legend{
-    font-size: xx-large;
-    font-weight: bold;
+input[type=number]{
     text-align: center;
-}
-
-fieldset>input {
-    width: 20px;
-    height: 15px;
-}
-.matriz{
-    width: 140px;
-    display: block;
-    margin: auto;
-}
-
-.matriz>input {
-    font-size: large;
-    margin-top: 5px;
-    width: 30px;
-    height: 30px;
-    
-}
-#operador{
-    width: 5%;
-    display: flex;
-    align-items: center;
-    justify-self: center;
-}
-fieldset:nth-child(3){
-    display: flex;
-    justify-content: space-around;
 }
 
 button {
@@ -101,13 +55,111 @@ section {
     width: 25px;
 }
 
+/* RETIRAR AS  SETAS DO INPUT NUMBER */
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button{
+input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
+    margin: 0;
+    
+}
+
+/* FIELDSET */
+
+fieldset {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+fieldset:nth-child(2) {
+    flex-direction: column;
+}
+
+fieldset>legend {
+    font-weight: bold;
+    font-size: 20px;
+    width: 29, 5%;
+}
+
+fieldset>input {
+    width: 20px;
+    height: 15px;
+}
+
+
+section>div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+/* MATRIZES */
+
+#Matrizes {
+    display: flex;
+    align-items: start;
+    width: 100%;
     margin: 0;
 }
 
-fieldset>div{
-    margin-top: 20%;
+#Matrizes>fieldset {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#Matrizes>fieldset>legend {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+#operador {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+#Matrizes>fieldset>div {
+    display: block;
+    margin-block-start: 15%;
+}
+
+/* RESULTADO */
+
+#resultado {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#resultado>table {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: auto;
+    font-size: xx-large;
+
+}
+
+#resultado>table>tr {
+    display: flexbox;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+
+}
+
+#resultado>table>tr>td {
+    width: 50px;
+    background-color: #fff;
+    text-align: center;
+    /* border: solid 1px black ;
+    background-color: #fff; */
 
 }

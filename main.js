@@ -2,6 +2,23 @@ function nextPage() {
     // Aqui você pode adicionar lógica para avançar para a próxima página, se necessário
 }
 
+
+function criarField(){          
+    document.getElementById("Matrizes").innerHTML=`<fieldset>
+        <legend>Matrizes</legend>
+
+        <p style="font-size: 80px; width: 20px;">[</p>
+        <div id="matrizA"></div>
+        <p style="font-size: 80px; width: 20px;">]</p>
+        <h1 id="operador"></h1>
+        <p style="font-size: 80px; width: 20px;">[</p>
+        <div id="matrizB"></div>
+        <p style="font-size: 80px; width: 20px;">]</p>
+    </fieldset>`
+
+
+}
+
 function criarMatriz(id) {
 
 
@@ -10,9 +27,12 @@ function criarMatriz(id) {
     const operacao = document.querySelector('input[name="operacao"]:checked').value;
 
     const divMatriz = document.getElementById(id);
-    divMatriz.innerHTML = '';
+    if(divMatriz==''){
+        divMatriz.innerHTML = '';
+    }
+    
 
-    alert(operacao)
+    // alert(operacao)
 
     for (let i = 0; i < linhas; i++) {
         for (let j = 0; j < colunas; j++) {
@@ -31,15 +51,19 @@ function criarMatriz(id) {
         alert("erro no simbolo da operação")
     }
 
+    document.getElementById("button").innerHTML=`<button onclick="calcularMatrizes(${operacao},${colunas},${linhas})">Calcular</button>`;
+    
+    
+
 }
 
-function calcularMatrizes() {
+function calcularMatrizes(operacao,qtdCol,qtdLin) {
         
     const matrizA = obterMatriz('matrizA', qtdLin, qtdCol);
     const matrizB = obterMatriz('matrizB', qtdLin, qtdCol);
-
-    const resultado = realizarOperacao(matrizA, matrizB, operacao);
-
+   
+    const resultado = realizarOperacao(matrizA, matrizB, operacao.value);
+    
     exibirResultado(resultado);
 }
 
@@ -56,7 +80,7 @@ function obterMatriz(id, linhas, colunas) {
         }
         matriz.push(row);
     }
-
+    window.location.href='#resultado'
     return matriz;
 }
 
@@ -84,18 +108,21 @@ function realizarOperacao(matrizA, matrizB, operacao) {
 
 function exibirResultado(resultado) {
     const divResultado = document.getElementById('resultado');
-    divResultado.innerHTML = '<h3>Resultado:</h3>';
+    divResultado.innerHTML = `<h3>Resultado:</h3>
+    <p style="font-size: 90px; width: 20px;">[</p>
+    <p id="pResult" style="font-size: 90px; width: 20px;">]</p>
+    `;
 
+    const p  = document.getElementById('pResult')
     const table = document.createElement('table');
     for (const row of resultado) {
         const tr = document.createElement('tr');
         for (const cell of row) {
             const td = document.createElement('td');
             td.textContent = cell;
-            tr.appendChild(td);
+        tr.appendChild(td);
         }
         table.appendChild(tr);
     }
-
-    divResultado.appendChild(table);
+    divResultado.insertBefore(table,p)
 }
