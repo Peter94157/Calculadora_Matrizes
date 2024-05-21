@@ -5,7 +5,7 @@ html {
     padding: 0;
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(to top, red, yellow);
+    background-image: radial-gradient(red, yellow);
 
 }
 
