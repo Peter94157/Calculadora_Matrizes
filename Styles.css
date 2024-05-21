@@ -5,7 +5,7 @@ html {
     padding: 0;
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(to bottom, #ee1212, #801010);
+    background-image: linear-gradient(to top, red, yellow);
 
 }
 
