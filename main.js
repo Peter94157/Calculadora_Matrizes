@@ -3,7 +3,13 @@ function nextPage() {
 }
 
 
-function criarField(){          
+function criarField(){    
+    const linhas = parseInt(document.getElementById('qtdLin').value);
+    const colunas = parseInt(document.getElementById('qtdCol').value);
+    if(isNaN(linhas)||isNaN(colunas)){
+        return alert("Preencha os campos em branco") 
+    }
+    
     document.getElementById("Matrizes").innerHTML=`<fieldset>
         <legend>Matrizes</legend>
 
@@ -25,17 +31,15 @@ function reload(){
 
 function criarMatriz(id) {
     
-    
     const linhas = parseInt(document.getElementById('qtdLin').value);
     const colunas = parseInt(document.getElementById('qtdCol').value);
     const operacao = document.querySelector('input[name="operacao"]:checked').value;
     const divMatriz = document.getElementById(id);
-
     if(isNaN(linhas)||isNaN(colunas)){
-        return alert("Preencha os campos em branco")
-        
+        return 
     }
-    criarField()
+    
+   
     if(divMatriz==''){
         divMatriz.innerHTML = '';
     }
