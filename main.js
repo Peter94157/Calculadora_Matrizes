@@ -19,14 +19,23 @@ function criarField(){
 
 }
 
+function reload(){
+    window.location.reload()
+}
+
 function criarMatriz(id) {
-
-
+    
+    
     const linhas = parseInt(document.getElementById('qtdLin').value);
     const colunas = parseInt(document.getElementById('qtdCol').value);
     const operacao = document.querySelector('input[name="operacao"]:checked').value;
-
     const divMatriz = document.getElementById(id);
+
+    if(isNaN(linhas)||isNaN(colunas)){
+        return alert("Preencha os campos em branco")
+        
+    }
+    criarField()
     if(divMatriz==''){
         divMatriz.innerHTML = '';
     }
@@ -52,6 +61,8 @@ function criarMatriz(id) {
     }
 
     document.getElementById("button").innerHTML=`<button onclick="calcularMatrizes(${operacao},${colunas},${linhas})">Calcular</button>`;
+    document.getElementById("next").innerHTML=""
+    document.getElementById("next").innerHTML='<button onclick="reload()">Restart</button>'
     
     
 
@@ -65,6 +76,8 @@ function calcularMatrizes(operacao,qtdCol,qtdLin) {
     const resultado = realizarOperacao(matrizA, matrizB, operacao.value);
     
     exibirResultado(resultado);
+
+
 }
 
 function obterMatriz(id, linhas, colunas) {
@@ -124,5 +137,12 @@ function exibirResultado(resultado) {
         }
         table.appendChild(tr);
     }
+    excluirSecoes('operacao')
+    excluirSecoes('Quantidades')
     divResultado.insertBefore(table,p)
+}
+
+function excluirSecoes(id){
+    const header = document.getElementById(id)
+    header.parentNode.removeChild(header)    
 }

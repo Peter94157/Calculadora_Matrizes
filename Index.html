@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Calculadora de matrizes</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel="shortcut icon" type="imagex/png" href="./logo.bmp">
     <link rel='stylesheet' type='text/css' media='screen' href='Styles.css'>
     <script src='main.js'></script>
@@ -34,7 +34,7 @@
 
 
             </fieldset>
-            <fieldset>
+            <fieldset id="Quantidades">
 
                 <legend>Quantidades desejadas</legend>
                 <!-- 
@@ -56,10 +56,12 @@
             
         </section>
         <div id="resultado"></div>
-        <div>
-            <button onclick="criarField();criarMatriz('matrizA');criarMatriz('matrizB')">Próximo</button>
+        <div id="opcoes">
+            <div id="button"></div>
+            <div id="next">
+                <button onclick="criarMatriz('matrizA');criarMatriz('matrizB')">Próximo</button>
+            </div>
         </div>
-        <div id="button"></div>
 
     </main>
 </body>
