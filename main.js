@@ -87,7 +87,7 @@ function criarMatriz(id) {
 
     document.getElementById("button").innerHTML=`<button onclick="calcularMatrizes(${operacao})">Calcular</button>`;
     document.getElementById("next").innerHTML=""
-    document.getElementById("next").innerHTML='<button onclick="reload()">Restart</button>'
+    document.getElementById("next").innerHTML='<button onclick="reload()">Menu</button>'
     
     
     
@@ -210,6 +210,7 @@ function exibirResultado(resultado) {
     excluirSecoes('operacao')
     excluirSecoes('Quantidades')
     excluirSecoes('button')
+    excluirSecoes('Matrizes')
 }
 
 function excluirSecoes(id){
