@@ -56,7 +56,7 @@ function criarMatriz(id) {
         divMatriz.appendChild(document.createElement('br'));
     }
     const sinal = document.getElementById("operador") 
-    alert(operacao)
+    // alert(operacao)
     switch(operacao){
         case 'soma':
             sinal.innerHTML='+';
@@ -98,7 +98,7 @@ function calcularMatrizes(operacao) {
     const linhas = parseInt(document.getElementById('qtdLin').value);
     const colunas = parseInt(document.getElementById('qtdCol').value);
 
-    alert(`${operacao} ${colunas} ${linhas}`)
+    // alert(`${operacao} ${colunas} ${linhas}`)
 
     const matrizA = obterMatriz('matrizA', linhas, colunas);
     let matrizB=[]
@@ -110,7 +110,7 @@ function calcularMatrizes(operacao) {
     switch(operacao){
         case 'soma':
             resultado = realizarOperacao(matrizA, matrizB, operacao)
-            alert(`Somando ${resultado}`)
+            // alert(`Somando ${resultado}`)
             break;
         case 'multiplicacao':
             resultado = realizarOperacao(matrizA, matrizB, operacao)
@@ -171,7 +171,7 @@ function realizarOperacao(matrizA, matrizB, operacao) {
         }
         resultado.push(row);
     }
-    alert(`Resultado realizarOp ${operacao}`)
+    // alert(`Resultado realizarOp ${operacao}`)
     return resultado;
 }
 
@@ -207,8 +207,9 @@ function exibirResultado(resultado) {
         divResultado.appendChild(h4);
         
     }
-    // excluirSecoes('operacao')
-    // excluirSecoes('Quantidades')
+    excluirSecoes('operacao')
+    excluirSecoes('Quantidades')
+    excluirSecoes('button')
 }
 
 function excluirSecoes(id){
