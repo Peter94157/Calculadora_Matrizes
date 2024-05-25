@@ -207,8 +207,8 @@ function exibirResultado(resultado) {
         divResultado.appendChild(h4);
         
     }
-    excluirSecoes('operacao')
-    excluirSecoes('Quantidades')
+    // excluirSecoes('operacao')
+    // excluirSecoes('Quantidades')
 }
 
 function excluirSecoes(id){
