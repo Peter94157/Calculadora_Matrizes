@@ -1,75 +1,31 @@
 
 
 
-function criarField(calculoSelecionado) {
+function criarField() {
+    const calculoSelecionado =document.querySelector('input[name="operacao"]:checked').value 
     const linhas = parseInt(document.getElementById('qtdLin').value);
     const colunas = parseInt(document.getElementById('qtdCol').value);
     if (isNaN(linhas) || isNaN(colunas)) {
         return alert("Preencha os campos em branco")
     }
-    switch (calculoSelecionado) {
-        case 'soma':
-            document.getElementById("Matrizes").innerHTML = `<fieldset>
-                <legend>Matrizes</legend>
+    document.getElementById("Matrizes").innerHTML = `<fieldset>
+    <legend>Matrizes</legend>
 
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizA"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-                <h1 id="operador"></h1>
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizB"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-                </fieldset>`
+    <p style="font-size: 80px; width: 20px;">[</p>
+    <div id="matrizA"></div>
+    <p style="font-size: 80px; width: 20px;">]</p>
+    <h1 id="operador"></h1>
+    <p style="font-size: 80px; width: 20px;">[</p>
+    <div id="matrizB"></div>
+    <p style="font-size: 80px; width: 20px;">]</p>
+    </fieldset>`
 
-        case 'subtracao':
-            document.getElementById("Matrizes").innerHTML = `<fieldset>
-                <legend>Matrizes</legend>
-
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizA"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-                <h1 id="operador"></h1>
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizB"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-                </fieldset>`
-                
-        case 'multplicacao':
-            document.getElementById("Matrizes").innerHTML = `<fieldset>
-                <legend>Matrizes</legend>
-
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizA"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-                <h1 id="operador"></h1>
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizB"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-                </fieldset>`
-                
-        case 'determinante':
-            document.getElementById("Matrizes").innerHTML = `<fieldset>
-                <legend>Matrizes</legend>
-
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizA"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-                <h1 id="operador"></h1>
-                </fieldset>`
-                
-        case 'inversa':
-            document.getElementById("Matrizes").innerHTML = `<fieldset>
-                <legend>Matrizes</legend>
-
-                <p style="font-size: 80px; width: 20px;">[</p>
-                <div id="matrizA"></div>
-                <p style="font-size: 80px; width: 20px;">]</p>
-                <h1 id="operador"></h1>
-                </fieldset>`
-                
+    
+    if(calculoSelecionado=="determinante"||calculoSelecionado=="inversa"){
+        excluirSecoes('#Matrizes > fieldset > p:nth-child(6)')
+        excluirSecoes('#Matrizes > fieldset > p:nth-child(7)')
+        excluirSecoes('matrizB')
     }
-
-
 
 }
 
@@ -84,10 +40,10 @@ function criarMatriz(id) {
     const colunas = parseInt(document.getElementById('qtdCol').value);
     const operacao = document.querySelector('input[name="operacao"]:checked').value;
     const divMatriz = document.getElementById(id);
+
     if (isNaN(linhas) || isNaN(colunas)) {
         return
     }
-
     if (divMatriz == '') {
         divMatriz.innerHTML = '';
     }
@@ -100,6 +56,7 @@ function criarMatriz(id) {
             const input = document.createElement('input');
             input.type = 'number';
             input.setAttribute('class', 'campoForms');
+            console.log(input)
             divMatriz.appendChild(input);
         }
         divMatriz.appendChild(document.createElement('br'));
@@ -264,8 +221,14 @@ function exibirResultado(resultado) {
 }
 
 function excluirSecoes(id) {
-    const header = document.getElementById(id)
-    header.parentNode.removeChild(header)
+    try {
+        const header = document.getElementById(id)
+        header.parentNode.removeChild(header)
+    } catch (error) {
+        const header = document.querySelector(id)
+        header.parentNode.removeChild(header)
+    }
+
 }
 
 function calcularInversa(matriz) {
@@ -360,7 +323,6 @@ function calcularDeterminante(matriz) {
 }
 function geradorMatrix() {
     const operacao = document.querySelector('input[name="operacao"]:checked').value;
-    criarField(operacao)
     switch (operacao) {
         case 'soma':
             criarMatriz('matrizA')
