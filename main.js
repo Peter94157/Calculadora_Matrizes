@@ -149,6 +149,9 @@ function obterMatriz(id, linhas, colunas) {
     for (let i = 0; i < linhas; i++) {
         const row = [];
         for (let j = 0; j < colunas; j++) {
+            if(inputs[index].value==""){
+                return alert("preencha os espaços em branco")
+            } 
             row.push(parseInt(inputs[index].value));
             index++;
         }
