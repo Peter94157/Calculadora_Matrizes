@@ -2,7 +2,7 @@
 
 
 function criarField() {
-    const calculoSelecionado =document.querySelector('input[name="operacao"]:checked').value 
+    const calculoSelecionado = document.querySelector('input[name="operacao"]:checked').value
     const linhas = parseInt(document.getElementById('qtdLin').value);
     const colunas = parseInt(document.getElementById('qtdCol').value);
     if (isNaN(linhas) || isNaN(colunas)) {
@@ -20,8 +20,8 @@ function criarField() {
     <p style="font-size: 80px; width: 20px;">]</p>
     </fieldset>`
 
-    
-    if(calculoSelecionado=="determinante"||calculoSelecionado=="inversa"){
+
+    if (calculoSelecionado == "determinante" || calculoSelecionado == "inversa") {
         excluirSecoes('#Matrizes > fieldset > p:nth-child(6)')
         excluirSecoes('#Matrizes > fieldset > p:nth-child(7)')
         excluirSecoes('matrizB')
@@ -49,8 +49,6 @@ function criarMatriz(id) {
     }
 
 
-    //  alert(operacao)
-
     for (let i = 0; i < linhas; i++) {
         for (let j = 0; j < colunas; j++) {
             const input = document.createElement('input');
@@ -62,7 +60,6 @@ function criarMatriz(id) {
         divMatriz.appendChild(document.createElement('br'));
     }
     const sinal = document.getElementById("operador")
-    // alert(operacao)
     switch (operacao) {
         case 'soma':
             sinal.innerHTML = '+';
@@ -83,13 +80,6 @@ function criarMatriz(id) {
             alert('erro no simbolo da operação')
             return;
     }
-    // if (operacao === 'soma') {
-    //     document.getElementById("operador").innerHTML='+';
-    // } else if (operacao === 'multiplicacao') {
-    //     document.getElementById("operador").innerHTML='x';
-    // }else{
-    //     alert("erro no simbolo da operação")
-    // }
 
     document.getElementById("button").innerHTML = `<button onclick="calcularMatrizes(${operacao})">Calcular</button>`;
     document.getElementById("next").innerHTML = ""
@@ -105,7 +95,6 @@ function calcularMatrizes(operacao) {
     const linhas = parseInt(document.getElementById('qtdLin').value);
     const colunas = parseInt(document.getElementById('qtdCol').value);
 
-    // alert(`${operacao} ${colunas} ${linhas}`)
 
     const matrizA = obterMatriz('matrizA', linhas, colunas);
     let matrizB = []
@@ -117,7 +106,6 @@ function calcularMatrizes(operacao) {
     switch (operacao) {
         case 'soma':
             resultado = realizarOperacao(matrizA, matrizB, operacao)
-            // alert(`Somando ${resultado}`)
             break;
         case 'multiplicacao':
             resultado = realizarOperacao(matrizA, matrizB, operacao)
@@ -149,9 +137,9 @@ function obterMatriz(id, linhas, colunas) {
     for (let i = 0; i < linhas; i++) {
         const row = [];
         for (let j = 0; j < colunas; j++) {
-            if(inputs[index].value==""){
+            if (inputs[index].value == "") {
                 return alert("preencha os espaços em branco")
-            } 
+            }
             row.push(parseInt(inputs[index].value));
             index++;
         }
@@ -181,7 +169,6 @@ function realizarOperacao(matrizA, matrizB, operacao) {
         }
         resultado.push(row);
     }
-    // alert(`Resultado realizarOp ${operacao}`)
     return resultado;
 }
 

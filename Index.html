@@ -18,42 +18,37 @@
         </header>
         <section id="configCalculo">
             <div>
-            <fieldset id="operacao">
-                <legend>Selecione a Operação</legend>
+                <fieldset id="operacao">
+                    <legend>Selecione a Operação</legend>
 
-                <input type="radio" name="operacao" id="soma" value="soma" checked>
-                <label for="adicao">Adição</label>
-                <input type="radio" name="operacao" id="subtracao" value="subtracao">
-                <label for="subtracao">Subtração</label><br>
-                <input type="radio" name="operacao" id="multiplicacao" value="multiplicacao">
-                <label for="mult">Multiplicação</label>
-                <input type="radio" name="operacao" id="determinante" value="determinante">
-                <label for="determinante">Determinante</label>
-                <input type="radio" name="operacao" id="inversa" value="inversa">
-                <label for="inversa">Inversa</label>
-
-
-            </fieldset>
-            <fieldset id="Quantidades">
-
-                <legend>Quantidades desejadas</legend>
-                <!-- 
-                <label for="qtdMatriz">Quantidade de matrizes: </label>
-                <input type="number" class="campoForms" id="qtdMatriz" min="1"> -->
+                    <input type="radio" name="operacao" id="soma" value="soma" checked>
+                    <label for="adicao">Adição</label>
+                    <input type="radio" name="operacao" id="subtracao" value="subtracao">
+                    <label for="subtracao">Subtração</label><br>
+                    <input type="radio" name="operacao" id="multiplicacao" value="multiplicacao">
+                    <label for="mult">Multiplicação</label>
+                    <input type="radio" name="operacao" id="determinante" value="determinante">
+                    <label for="determinante">Determinante</label>
+                    <input type="radio" name="operacao" id="inversa" value="inversa">
+                    <label for="inversa">Inversa</label>
 
 
-                <label for="qtdLin">Quantidade de linhas e colunas: </label>
-                <div>
-                    <input type="number" class="campoForms" id="qtdLin" min="1" max="5">
-                    <span>X</span>
-                    <!-- <label for="qtdCol">Quantidade de colunas: </label> -->
-                    <input type="number" class="campoForms" id="qtdCol" min="1" max="5">
-                </div>
+                </fieldset>
+                <fieldset id="Quantidades">
 
-            </fieldset>
-        </div>
+                    <legend>Quantidades desejadas</legend>
+
+                    <label for="qtdLin">Quantidade de linhas e colunas: </label>
+                    <div>
+                        <input type="number" class="campoForms" id="qtdLin" min="1" max="5">
+                        <span>X</span>
+                        <input type="number" class="campoForms" id="qtdCol" min="1" max="5">
+                    </div>
+
+                </fieldset>
+            </div>
             <div id="Matrizes"></div>
-            
+
         </section>
         <div id="resultado"></div>
         <div id="opcoes">
@@ -65,5 +60,4 @@
 
     </main>
 </body>
-
 </html>

@@ -1,23 +1,4 @@
-/* html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    box-sizing: inherit;
-} */
-/* 
-body {
-    width: 100%;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-repeat:  no-repeat ;
-    object-fit: contain;
-    background-image: radial-gradient(transparent, black ) 
-} */
+
 
 html,
 body {
@@ -27,6 +8,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     background-image: radial-gradient(transparent, black)
 }
@@ -121,7 +103,6 @@ section>div {
 #Matrizes {
     display: flex;
     align-items: start;
-    /* width: 100%; */
     margin: 0;
 }
 
@@ -161,8 +142,6 @@ section>div {
     display: flexbox;
     justify-content: center;
     align-items: center;
-    /* width: 20%; */
-    /* height: auto; */
     font-size: xx-large;
 
 }
@@ -180,8 +159,6 @@ section>div {
     width: 50px;
     background-color: #fff;
     text-align: center;
-    /* border: solid 1px black ;
-    background-color: #fff; */
 
 }
 
@@ -194,7 +171,6 @@ section>div {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    /* gap: 20px; */
     flex-direction: row-reverse;
 }
 
@@ -282,7 +258,6 @@ section>div {
     #Matrizes {
         display: flex;
         align-items: start;
-        /* width: 100%; */
         margin: 0;
         font-size: small;
 
@@ -324,10 +299,5 @@ section>div {
         display: block;
         margin-block-start: 15%;
     }
-
-    /* #Matrizes{
-        font-size: 40px !important;
-        width: 10px !important; */
-}
 
 }
