@@ -1,4 +1,4 @@
-html {
+/* html {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -6,38 +6,54 @@ html {
     display: flex;
     justify-content: center;
     box-sizing: inherit;
-}
-
+} */
+/* 
 body {
-    width: 750px;
-    background-color: #fff;
+    width: 100%;
+    background-color: #000;
     display: flex;
     align-items: center;
     flex-direction: column;
     background-repeat:  no-repeat ;
     object-fit: contain;
     background-image: radial-gradient(transparent, black ) 
+} */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-image: radial-gradient(transparent, black)
 }
 
 
 header {
-    /* width: 70%; */
     font-size: larger;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 main {
+    width: 90%;
+    max-width: 800px;
     margin: 0;
-    background-color: rgba(255,255,255,0.6);
+    background-color: rgba(255, 255, 255, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    text-align: center;
     padding: 20px;
-    border: 1px solid black;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.97);
+    box-sizing: border-box;
 }
 
-input[type=number]{
+input[type=number] {
     text-align: center;
 }
 
@@ -63,7 +79,7 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-    
+
 }
 
 /* FIELDSET */
@@ -169,7 +185,7 @@ section>div {
 
 }
 
-#opcoes{
+#opcoes {
     margin-top: 10px;
 }
 
@@ -177,7 +193,122 @@ section>div {
     margin-top: 10px;
     width: 100%;
     display: flex;
-    justify-content: space-around ;
+    justify-content: space-around;
     /* gap: 20px; */
-    flex-direction: row-reverse ;
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 1600px) {
+
+    main {
+        width: 90%;
+        max-width: 400px;
+        margin: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.97);
+        box-sizing: border-box;
+    }
+
+
+    button {
+        font-size: small;
+        width: 80px;
+        height: 30px;
+    }
+
+    header {
+        font-size: small;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+
+    /* FIELDSET */
+
+    fieldset {
+        width: 100%;
+        min-width: 130px;
+        display: flex;
+        padding: 5px;
+        gap: 5px;
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    /* Escolha de quantidade */
+    fieldset:nth-child(2) {
+        flex-direction: column;
+    }
+
+    fieldset>legend {
+        font-weight: bold;
+        font-size: 15px;
+        width: 17, 5%;
+    }
+
+    fieldset>input {
+        width: 10px;
+        height: 10px;
+    }
+
+
+    section>div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    #Matrizes {
+        display: flex;
+        align-items: start;
+        /* width: 100%; */
+        margin: 0;
+        font-size: small;
+
+    }
+    #matrizA,#matrizB{
+        margin-top: 20px !important;
+        height: 60% !important;
+        margin-top: 0px !important;
+        align-self: center;
+    }
+    #Matrizes>fieldset>p{
+        margin: 0;
+    }
+    #Matrizes>fieldset {
+        margin: 0;
+        max-height: 200px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #Matrizes>fieldset>legend {
+        font-size: medium;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #operador {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+    }
+
+    #Matrizes>fieldset>div {
+        display: block;
+        margin-block-start: 15%;
+    }
+    /* #Matrizes{
+        font-size: 40px !important;
+        width: 10px !important; */
+    }
+
 }

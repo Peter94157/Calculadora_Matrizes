@@ -1,153 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Calculadora de Matrizes</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="Styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Matrizes</title>
+    <link rel="stylesheet" href="Style2.css">
     <script src='main.js'></script>
+    
 </head>
-
 <body>
-    <main>
+    <div class="container">
         <header>
-            <h1>CALCULO DE MATRIZES</h1>
+            <h1>CÁLCULO DE MATRIZES</h1>
         </header>
-        <section>
-            <fieldset id="operacao">
-                <legend>Selecione a Operação</legend>
-
-                <input type="radio" name="operacao" id="soma" value="soma">
-                <label for="soma">Adição</label>
-                <input type="radio" name="operacao" id="multiplicacao" value="multiplicacao">
-                <label for="multiplicacao">Multiplicação</label>
-
-            </fieldset>
-            <fieldset>
-
-                <legend>Quantidades desejadas</legend>
-
-                <label for="qtdLin">Quantidade de linhas: </label>
-                <input type="number" class="campoForms" id="qtdLin" min="1">
-                <label for="qtdCol">Quantidade de colunas: </label>
-                <input type="number" class="campoForms" id="qtdCol" min="1">
-
-            </fieldset>
-
-            <fieldset>
-                <legend>Matriz A</legend>
-                <div id="matrizA"></div>
-            </fieldset>
-
-            <fieldset>
-                <legend>Matriz B</legend>
-                <div id="matrizB"></div>
-            </fieldset>
-
-            <button onclick="calcularMatrizes()">Calcular</button>
-
-            <div id="resultado"></div>
-
-        </section>
-
-    </main>
-
-    <script>
-        function nextPage() {
-            // Aqui você pode adicionar lógica para avançar para a próxima página, se necessário
-        }
-
-        function criarMatriz(id, linhas, colunas) {
-            const divMatriz = document.getElementById(id);
-            divMatriz.innerHTML = '';
-
-            for (let i = 0; i < linhas; i++) {
-                for (let j = 0; j < colunas; j++) {
-                    const input = document.createElement('input');
-                    input.type = 'number';
-                    input.setAttribute('class', 'campoForms');
-                    divMatriz.appendChild(input);
-                }
-                divMatriz.appendChild(document.createElement('br'));
-            }
-        }
-
-        function calcularMatrizes() {
-            const qtdLin = parseInt(document.getElementById('qtdLin').value);
-            const qtdCol = parseInt(document.getElementById('qtdCol').value);
-
-            criarMatriz('matrizA', qtdLin, qtdCol);
-            criarMatriz('matrizB', qtdLin, qtdCol);
-
-            const operacao = document.querySelector('input[name="operacao"]:checked').value;
-
-            const matrizA = obterMatriz('matrizA', qtdLin, qtdCol);
-            const matrizB = obterMatriz('matrizB', qtdLin, qtdCol);
-
-            const resultado = realizarOperacao(matrizA, matrizB, operacao);
-
-            exibirResultado(resultado);
-        }
-
-        function obterMatriz(id, linhas, colunas) {
-            const matriz = [];
-            const inputs = document.getElementById(id).querySelectorAll('input');
-
-            let index = 0;
-            for (let i = 0; i < linhas; i++) {
-                const row = [];
-                for (let j = 0; j < colunas; j++) {
-                    row.push(parseInt(inputs[index].value));
-                    index++;
-                }
-                matriz.push(row);
-            }
-
-            return matriz;
-        }
-
-        function realizarOperacao(matrizA, matrizB, operacao) {
-            const resultado = [];
-
-            for (let i = 0; i < matrizA.length; i++) {
-                const row = [];
-                for (let j = 0; j < matrizA[0].length; j++) {
-                    if (operacao === 'soma') {
-                        row.push(matrizA[i][j] + matrizB[i][j]);
-                    } else if (operacao === 'multiplicacao') {
-                        let sum = 0;
-                        for (let k = 0; k < matrizA[0].length; k++) {
-                            sum += matrizA[i][k] * matrizB[k][j];
-                        }
-                        row.push(sum);
-                    }
-                }
-                resultado.push(row);
-            }
-
-            return resultado;
-        }
-
-        function exibirResultado(resultado) {
-            const divResultado = document.getElementById('resultado');
-            divResultado.innerHTML = '<h3>Resultado:</h3>';
-
-            const table = document.createElement('table');
-            for (const row of resultado) {
-                const tr = document.createElement('tr');
-                for (const cell of row) {
-                    const td = document.createElement('td');
-                    td.textContent = cell;
-                    tr.appendChild(td);
-                }
-                table.appendChild(tr);
-            }
-
-            divResultado.appendChild(table);
-        }
-    </script>
+        <main>
+            <form>
+                <fieldset>
+                    <legend>Selecione a Operação</legend>
+                    <div>
+                        <label><input type="radio" name="operacao" value="Adição" checked> Adição</label>
+                        <label><input type="radio" name="operacao" value="Subtração"> Subtração</label>
+                        <label><input type="radio" name="operacao" value="Multiplicação"> Multiplicação</label>
+                        <label><input type="radio" name="operacao" value="Determinante" > Determinante</label>
+                        <label><input type="radio" name="operacao" value="Inversa"> Inversa</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Quantidades desejadas</legend>
+                    <label>Quantidade de linhas e colunas:</label>
+                    <input class="campoForms" type="number" min="1">
+                    <span>X</span>
+                    <input class="campoForms" type="number" min="1">
+                </fieldset>
+                <button type="submit" onclick="criarField();geradorMatrix()">Próximo</button>
+            </form>
+        </main>
+    </div>
 </body>
-
 </html>
