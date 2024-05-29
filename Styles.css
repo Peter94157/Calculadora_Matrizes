@@ -200,6 +200,19 @@ section>div {
 
 @media (max-width: 1600px) {
 
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-image: radial-gradient(transparent, black)
+    }
+
     main {
         width: 90%;
         max-width: 400px;
@@ -207,6 +220,7 @@ section>div {
         background-color: rgba(255, 255, 255, 0.3);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         text-align: center;
         padding: 20px;
@@ -273,15 +287,19 @@ section>div {
         font-size: small;
 
     }
-    #matrizA,#matrizB{
+
+    #matrizA,
+    #matrizB {
         margin-top: 20px !important;
         height: 60% !important;
         margin-top: 0px !important;
         align-self: center;
     }
-    #Matrizes>fieldset>p{
+
+    #Matrizes>fieldset>p {
         margin: 0;
     }
+
     #Matrizes>fieldset {
         margin: 0;
         max-height: 200px;
@@ -306,9 +324,10 @@ section>div {
         display: block;
         margin-block-start: 15%;
     }
+
     /* #Matrizes{
         font-size: 40px !important;
         width: 10px !important; */
-    }
+}
 
 }
