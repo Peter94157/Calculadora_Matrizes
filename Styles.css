@@ -174,10 +174,10 @@ section>div {
     flex-direction: row-reverse;
 }
 
-@media (max-width: 400px){
+@media (max-width: 427px){
 
     #operacao{
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     }
@@ -235,7 +235,7 @@ section>div {
         display: flex;
         padding: 5px;
         gap: 5px;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         flex-wrap: wrap;
     }
 
