@@ -8,6 +8,11 @@ function criarField() {
     if (isNaN(linhas) || isNaN(colunas)) {
         return alert("Preencha os campos em branco")
     }
+
+    if(calculoSelecionado=='determinante' && linhas!==colunas){
+        return
+    }
+
     document.getElementById("Matrizes").innerHTML = `<fieldset>
     <legend>Matrizes</legend>
 
@@ -46,6 +51,11 @@ function criarMatriz(id) {
     }
     if (divMatriz == '') {
         divMatriz.innerHTML = '';
+    }
+    if(operacao=='determinante' && linhas!==colunas){
+        alert('A matriz deve ser quadrada para calcular o determinante')
+        
+        return
     }
 
 
@@ -221,7 +231,7 @@ function excluirSecoes(id) {
 
 }
 
-function calcularInversa(matriz) {
+function    calcularInversa(matriz) {
     // Função para calcular a inversa de uma matriz
     const n = matriz.length;
     let identity = [];
@@ -272,10 +282,7 @@ function calcularInversa(matriz) {
 function calcularDeterminante(matriz) {
     // Função para calcular o determinante de uma matriz
     const n = matriz.length;
-    if (n !== matriz[0].length) {
-        throw new Error('A matriz deve ser quadrada para calcular o determinante');
-    }
-
+    
     let det = 1;
     let copy = matriz.map(row => row.slice());
 
@@ -313,6 +320,8 @@ function calcularDeterminante(matriz) {
 }
 function geradorMatrix() {
     const operacao = document.querySelector('input[name="operacao"]:checked').value;
+    
+    
     switch (operacao) {
         case 'soma':
             criarMatriz('matrizA')
@@ -330,6 +339,7 @@ function geradorMatrix() {
             criarMatriz('matrizA')
             return
         case 'determinante':
+
             criarMatriz('matrizA')
             return
         default:

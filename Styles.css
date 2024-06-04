@@ -176,11 +176,13 @@ section>div {
 
 @media (max-width: 427px){
 
+    
     #operacao{
-        font-size: 0.8rem;
-    }
+        font-size: 1.0rem;
 
+        
     }
+}
 
 @media (max-width: 900px) {
 
