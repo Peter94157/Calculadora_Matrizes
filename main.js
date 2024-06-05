@@ -261,16 +261,16 @@ function    calcularInversa(matriz) {
         }
 
         for (let j = 0; j < n; j++) {
-            matriz[i][j] /= factor;
-            identity[i][j] /= factor;
+            matriz[i][j] = parseFloat((matriz[i][j] / factor).toFixed(2));
+            identity[i][j] = parseFloat((identity[i][j] / factor).toFixed(2));
         }
 
         for (let j = 0; j < n; j++) {
             if (j !== i) {
                 factor = matriz[j][i];
                 for (let k = 0; k < n; k++) {
-                    matriz[j][k] -= factor * matriz[i][k];
-                    identity[j][k] -= factor * identity[i][k];
+                    matriz[j][k] = parseFloat((matriz[j][k] - factor * matriz[i][k]).toFixed(2));
+                    identity[j][k] = parseFloat((identity[j][k] - factor * identity[i][k]).toFixed(2));
                 }
             }
         }
