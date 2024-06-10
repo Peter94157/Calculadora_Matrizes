@@ -9,7 +9,7 @@ function criarField() {
         return alert("Preencha os campos em branco")
     }
 
-    if(calculoSelecionado=='determinante' && linhas!==colunas){
+    if(calculoSelecionado=='determinante' || calculoSelecionado=='inversa' && linhas!==colunas){
         return
     }
 
@@ -52,7 +52,7 @@ function criarMatriz(id) {
     if (divMatriz == '') {
         divMatriz.innerHTML = '';
     }
-    if(operacao=='determinante' && linhas!==colunas){
+    if(operacao=='determinante'|| operacao=='inversa' && linhas!==colunas){
         alert('A matriz deve ser quadrada para calcular o determinante')
         
         return
@@ -64,7 +64,6 @@ function criarMatriz(id) {
             const input = document.createElement('input');
             input.type = 'number';
             input.setAttribute('class', 'campoForms');
-            console.log(input)
             divMatriz.appendChild(input);
         }
         divMatriz.appendChild(document.createElement('br'));
